@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilibili Mockup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00a1d6;
+        }
+        .navbar .search-box {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .search-box input {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            width: 200px;
+        }
+        .navbar .search-box button {
+            padding: 5px 10px;
+            margin-left: 5px;
+            background-color: #00a1d6;
+            border: none;
+            border-radius: 3px;
+            color: white;
+            cursor: pointer;
+        }
+        .main-content {
+            padding: 20px;
+        }
+        .category-bar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #ffffff;
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .category-bar a {
+            text-decoration: none;
+            color: #666;
+            padding: 5px 10px;
+        }
+        .category-bar a:hover {
+            color: #00a1d6;
+        }
+        .video-card {
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .video-card img {
+            width: 100%;
+        }
+        .video-card-content {
+            padding: 10px;
+        }
+        .video-card-content h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+        .video-card-content p {
+            color: #888;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">bilibili</div>
+        <div class="search-box">
+            <input type="text" placeholder="小白测评: 18小时前更新">
+            <button>搜索</button>
+        </div>
+    </div>
+    <div class="category-bar">
+        <a href="#">首页</a>
+        <a href="#">番剧</a>
+        <a href="#">国创</a>
+        <a href="#">综艺</a>
+        <a href="#">动画</a>
+        <a href="#">游戏</a>
+        <a href="#">科技</a>
+        <a href="#">电影</a>
+        <a href="#">电视剧</a>
+        <a href="#">纪录片</a>
+    </div>
+    <div class="main-content">
+        <div class="video-card">
+            <img src="https://via.placeholder.com/600x300" alt="Video Thumbnail">
+            <div class="video-card-content">
+                <h3>【星穹铁道】我做出了可以旋转的知更鸟唱片！</h3>
+                <p>星穹铁道 | 4小时前 | 1.5万观看</p>
+            </div>
+        </div>
+        <div class="video-card">
+            <img src="https://via.placeholder.com/600x300" alt="Video Thumbnail">
+            <div class="video-card-content">
+                <h3>【全球首拆】Apple Pencil Pro 苹果真没良心！</h3>
+                <p>科技测评 | 20小时前 | 47.5万观看</p>
+            </div>
+        </div>
+        <div class="video-card">
+            <img src="https://via.placeholder.com/600x300" alt="Video Thumbnail">
+            <div class="video-card-content">
+                <h3>寄！漂流相机全球篇居然翻车了…</h3>
+                <p>旅游探险 | 5小时前 | 453.8万观看</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
