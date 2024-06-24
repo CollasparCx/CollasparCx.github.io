@@ -3,135 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的博客</title>
+    <title>倒计时到2040年6月7日</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            position: relative;
-        }
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('index_background.jpg') no-repeat center center/cover;
-            opacity: 0.5; /* Adjust the opacity here */
-            z-index: -1;
-        }
-        header {
-            background-color: rgba(76, 175, 80, 0.8); /* Adjust the background color and transparency */
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-        }
-        nav {
             display: flex;
             justify-content: center;
-            background-color: rgba(51, 51, 51, 0.8); /* Adjust the background color and transparency */
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
         }
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
+        .countdown {
             text-align: center;
         }
-        nav a:hover {
-            background-color: rgba(221, 221, 221, 0.8); /* Adjust the background color and transparency */
-            color: black;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9); /* Adjust the background color and transparency */
-            border-radius: 5px;
-        }
-        .main-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .post {
-            background-color: rgba(255, 255, 255, 0.9); /* Adjust the background color and transparency */
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: calc(33.333% - 20px);
-            margin-bottom: 20px;
-            overflow: hidden;
-        }
-        .post img {
-            width: 100%;
-            height: auto;
-        }
-        .post-content {
-            padding: 15px;
-        }
-        .post-content h2 {
-            margin: 0 0 10px;
+        .countdown-text {
             font-size: 24px;
-            color: #4CAF50;
-        }
-        .post-content p {
-            font-size: 16px;
-            color: #777;
-        }
-        footer {
-            background-color: rgba(51, 51, 51, 0.8); /* Adjust the background color and transparency */
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>欢迎来到我的博客</h1>
-    </header>
-    <nav>
-        <a href="index.html">首页</a>
-        <a href="about.html">关于我</a>
-        <a href="#contact">联系我</a>
-    </nav>
-    <div class="container">
-        <div class="main-content">
-            <div class="post">
-                <img src="https://via.placeholder.com/400x200" alt="文章封面">
-                <div class="post-content">
-                    <h2>你好张鸿玉</h2>
-                    <p>这是文章摘要内容，介绍这篇文章的主要内容和亮点。</p>
-                </div>
-            </div>
-            <div class="post">
-                <img src="https://via.placeholder.com/400x200" alt="文章封面">
-                <div class="post-content">
-                    <h2>文章标题二</h2>
-                    <p>这是文章摘要内容，介绍这篇文章的主要内容和亮点。</p>
-                </div>
-            </div>
-            <div class="post">
-                <img src="https://via.placeholder.com/400x200" alt="文章封面">
-                <div class="post-content">
-                    <h2>文章标题三</h2>
-                    <p>这是文章摘要内容，介绍这篇文章的主要内容和亮点。</p>
-                </div>
-            </div>
-        </div>
+    <div class="countdown">
+        <div class="countdown-text" id="countdown"></div>
     </div>
-    <footer>
-        &copy; 2024 我的博客. 版权所有.
-    </footer>
+    
+    <script>
+        function updateCountdown() {
+            const targetDate = new Date('2040-06-07T00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = '倒计时结束';
+                clearInterval(timer);
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').innerHTML = `${days} 天 ${hours} 小时 ${minutes} 分钟 ${seconds} 秒`;
+        }
+
+        const timer = setInterval(updateCountdown, 1000);
+        updateCountdown();  // 初始化
+    </script>
 </body>
 </html>
